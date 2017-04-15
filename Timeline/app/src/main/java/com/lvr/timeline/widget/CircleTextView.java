@@ -1,4 +1,4 @@
-package com.lvr.timeline;
+package com.lvr.timeline.widget;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -8,7 +8,7 @@ import android.util.AttributeSet;
 import android.widget.TextView;
 
 /**
- * Created by lvr on 2017/4/5.
+ * Created by lvr on 2017/4/8.
  */
 
 public class CircleTextView extends TextView {

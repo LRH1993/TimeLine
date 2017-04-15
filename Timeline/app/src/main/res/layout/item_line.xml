@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+                android:id="@+id/rl_root"
+              xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <FrameLayout
+        android:id="@+id/fl_root"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/line_normal"
+        android:layout_width="1dp"
+        android:layout_height="110dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/colorAccent"/>
+
+    <com.lvr.timeline.widget.CircleTextView
+        android:id="@+id/tv_hour"
+        android:text="09:00"
+        android:background="@drawable/toux2"
+        android:gravity="center"
+        android:textSize="9sp"
+        android:textColor="@color/black"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"/>
+    </FrameLayout>
+    <TextView
+        android:layout_toRightOf="@+id/fl_root"
+        android:id="@+id/tv_yMD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:text=" 周六       2017.04.05"
+        android:textColor="@color/black"
+        android:textSize="9sp"/>
+    <android.support.v7.widget.CardView
+        android:layout_below="@+id/tv_yMD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_toRightOf="@id/fl_root"
+        android:background="@color/white"
+        android:clickable="false"
+        app:cardCornerRadius="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="今天是个好天气"
+                android:textColor="@color/black"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:padding="5dp"
+                android:id="@+id/tv_content"
+                android:text="你好吗"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="14:56"/>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>
