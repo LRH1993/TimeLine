@@ -22,10 +22,17 @@ public class TimelineAdapter extends  RecyclerView.Adapter<TimelineAdapter.ViewH
     private List<TimeInfo> list;
     private Context context;
     private OnItemClickListener mOnItemClickListener;
-    private int[] colors = {};
+    private int[] colors;
     public TimelineAdapter(Context context, List<TimeInfo> list) {
         this.list=list;
         this.context=context;
+        this.colors = new int[]{context.getResources().getColor(R.color.color1), context.getResources().getColor(R.color.color2), context.getResources().getColor(R.color.color3)
+                , context.getResources().getColor(R.color.color4), context.getResources().getColor(R.color.color5), context.getResources().getColor(R.color.color6), context.getResources().getColor(R.color.color7)
+                , context.getResources().getColor(R.color.color8), context.getResources().getColor(R.color.color9), context.getResources().getColor(R.color.color10), context.getResources().getColor(R.color.color11)
+                , context.getResources().getColor(R.color.color12), context.getResources().getColor(R.color.color13), context.getResources().getColor(R.color.color14), context.getResources().getColor(R.color.color15)
+                , context.getResources().getColor(R.color.color16), context.getResources().getColor(R.color.color17), context.getResources().getColor(R.color.color18), context.getResources().getColor(R.color.color19)
+                , context.getResources().getColor(R.color.color20), context.getResources().getColor(R.color.color21), context.getResources().getColor(R.color.color22), context.getResources().getColor(R.color.color23)
+                , context.getResources().getColor(R.color.color24)};
 
     }
     @Override
@@ -46,10 +53,17 @@ public class TimelineAdapter extends  RecyclerView.Adapter<TimelineAdapter.ViewH
         holder.timeText.setText(allTime);
         String[] split = info.getAddTime().split("-");
         holder.hourText.setText(split[0]);
+        String[] hours = split[0].split(":");
+        System.out.println(hours);
+        int hour = Integer.parseInt(hours[0]);
+        System.out.println(hour);
+        int color = colors[hour-1];
+        holder.hourText.setBackgroundColor(color);
+        holder.hourText.setTextColor(context.getResources().getColor(R.color.white));
         holder.rl_root.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mOnItemClickListener.onItemClick(list.get(position));
+                mOnItemClickListener.onItemClick(list.get(position),position);
             }
         });
     }
@@ -100,7 +114,7 @@ public class TimelineAdapter extends  RecyclerView.Adapter<TimelineAdapter.ViewH
         }
     }
     public interface  OnItemClickListener{
-        void onItemClick(TimeInfo mInfo);
+        void onItemClick(TimeInfo mInfo,int position);
     }
     public void setOnItemClickListener(OnItemClickListener onItemClickListener){
         this.mOnItemClickListener = onItemClickListener;

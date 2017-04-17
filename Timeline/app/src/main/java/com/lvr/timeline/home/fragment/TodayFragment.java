@@ -54,16 +54,25 @@ public class TodayFragment extends BaseFragment implements TimelineAdapter.OnIte
 
     @Subscribe
     public void onTimeInfoEvent(TimeInfo info) {
-        mInfos.add(info);
-        mAdapter.notifyItemRangeInserted(mInfos.size(),1);
+        if(info.isNew()){
+            mInfos.add(info);
+            mAdapter.notifyItemRangeInserted(mInfos.size(),1);
+        }else{
+           if(info.getPosition()!=-1){
+               mInfos.remove(info.getPosition());
+               mInfos.add(info.getPosition(),info);
+               mAdapter.notifyItemChanged(info.getPosition());
+           }
+        }
 
     }
 
 
     @Override
-    public void onItemClick(TimeInfo mInfo) {
+    public void onItemClick(TimeInfo mInfo,int position) {
         Intent intent = new Intent(getActivity(), EditActivity.class);
         intent.putExtra("TimeInfo",mInfo);
+        intent.putExtra("position",position);
         startActivity(intent);
     }
 }

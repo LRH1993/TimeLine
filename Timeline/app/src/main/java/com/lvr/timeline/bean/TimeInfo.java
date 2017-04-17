@@ -13,6 +13,30 @@ public class TimeInfo implements Parcelable {
     private String content;
     //生成时间信息
     private String addTime;
+    //是否是新的任务
+    private boolean isNew = true;
+    //在列表中所处位置
+    private int position = -1;
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
+    }
+
+
+
+    public boolean isNew() {
+        return isNew;
+    }
+
+    public void setNew(boolean aNew) {
+        isNew = aNew;
+    }
+
+
 
     public String getTitle() {
         return title;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
-              android:layout_height="wrap_content"
+              android:layout_height="110dp"
                 android:id="@+id/rl_root"
               xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -14,9 +14,9 @@
     <View
         android:id="@+id/line_normal"
         android:layout_width="1dp"
-        android:layout_height="110dp"
+        android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"
-        android:background="@color/colorAccent"/>
+        android:background="@color/time_line"/>
 
     <com.lvr.timeline.widget.CircleTextView
         android:id="@+id/tv_hour"
@@ -69,17 +69,17 @@
                 android:padding="5dp"
                 android:id="@+id/tv_content"
                 android:text="你好吗"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
-                android:maxLines="2"
+                android:lines="2"
                 />
 
             <TextView
                 android:id="@+id/tv_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="5dp"
                 android:text="14:56"/>
         </LinearLayout>
     </android.support.v7.widget.CardView>
