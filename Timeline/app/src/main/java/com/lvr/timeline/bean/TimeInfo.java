@@ -4,15 +4,30 @@ package com.lvr.timeline.bean;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class TimeInfo implements Parcelable {
+import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
+
+public class TimeInfo extends RealmObject implements Parcelable {
     //年月日信息
     private String ymD;
     //标题
     private String title;
     //内容
     private String content;
-    //生成时间信息
+    //时间段信息  12：00-13：00
+    @PrimaryKey
     private String addTime;
+
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
+    //创建该条目时的时间
+    private String createTime;
     //是否是新的任务
     private boolean isNew = true;
     //在列表中所处位置

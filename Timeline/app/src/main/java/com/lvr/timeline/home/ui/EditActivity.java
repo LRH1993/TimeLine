@@ -77,7 +77,6 @@ public class EditActivity extends BaseActivity implements View.OnClickListener, 
         Intent intent = getIntent();
         setPreInformation(intent);
         mTvTime.setOnClickListener(this);
-
     }
 
     /**
