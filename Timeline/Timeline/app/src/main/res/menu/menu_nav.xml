@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <group android:checkableBehavior="single">
+        <item android:title="事件提醒" android:id="@+id/mn_thing" android:icon="@drawable/thing"></item>
+        <item android:title="完成进度" android:id="@+id/mn_progress" android:icon="@drawable/progress"></item>
+        <item android:title="我的习惯" android:id="@+id/mn_habbit" android:icon="@drawable/habbit"></item>
+        <item android:title="我的心情" android:id="@+id/mn_moddy" android:icon="@drawable/moddy" ></item>
+        <item android:title="日历回顾" android:id="@+id/mn_calender" android:icon="@drawable/calender"></item>
+
+    </group>
+    <item android:title="更多">
+        <menu>
+            <item
+                android:id="@+id/mn_change"
+                android:icon="@drawable/change"
+                android:title="主题切换"/>
+            <item
+                android:id="@+id/mn_about"
+                android:icon="@drawable/about"
+                android:title="关于"/>
+            <item android:title="注销"
+                  android:id="@+id/mn_out"
+                  android:icon="@drawable/out">
+            </item>
+        </menu>
+    </item>
+</menu>
